@@ -2,21 +2,21 @@
 
 Task::Task(std::string taskTitle)
 {
-	title = taskTitle;
-	completed = false;
+    title = taskTitle;
+    completed = false;
 }
 
-std::string GetTitle() const
+std::string Task::GetTitle() const
 {
-	return title;
+    return title;
 }
 
 bool Task::IsCompleted() const
 {
-	return completed;
+    return completed;
 }
 
 void Task::CompleteTask()
 {
-	completed = true;
+    completed = true;
 }
