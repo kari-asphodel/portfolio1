@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="PotionShelfPrototype/PotionShelfPrototype.vcxproj" Id="17366923-b38e-469a-aa55-efc5172288e9" />
+</Solution>
