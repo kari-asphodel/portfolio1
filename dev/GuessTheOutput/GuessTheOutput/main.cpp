@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include<vector>
 void Round1()
 {
     int total = 0;
@@ -7,9 +7,10 @@ void Round1()
     for (int i = 1; i <= 3; i++)
     {
         total += i;
+        std::cout << "Total: " << total << " I: " << i << "\n";
     }
 
-    std::cout << total;
+    std::cout << total <<"\n";
     // A. 3
     // B. 6
     // C. 9
@@ -48,6 +49,7 @@ void Round4()
     std::vector<std::string> items = { "Sword", "Shield", "Potion" };
 
     std::cout << items[1];
+    std::cin.get();
     // A. Sword
     // B. Shield
     // C. Potion
@@ -65,6 +67,7 @@ void Round5()
     {
         std::cout << "Door opens";
     }
+    std::cin.get();
     // A. Door locked
     // B. Door opens
     // C. false
@@ -87,6 +90,7 @@ void Round7()
     std::string name = "Goblin";
 
     std::cout << "Hello, " << name;
+    std::cin.get();
     // A. Hello
     // B. Goblin
     // C. Hello, Goblin
@@ -99,6 +103,7 @@ void Round8()
     potions--;
 
     std::cout << potions;
+    std::cin.get();
     // A. 1
     // B. 2
     // C. 3
@@ -120,6 +125,7 @@ void Round9()
     {
         std::cout << "Exit";
     }
+    std::cin.get();
     // A. Add
     // B. View
     // C. Exit
@@ -130,6 +136,7 @@ void Round10()
     std::vector<int> numbers = { 4, 8, 15, 16 };
 
     std::cout << numbers.size();
+    std::cin.get();
     // A. 3
     // B. 4
     // C. 16
@@ -147,15 +154,15 @@ void BonusRound()
 }
 int main()
 {
-    Round1();
+   // Round1();
     //Round2();
-    //Round3();
+   // Round3();
     //Round4();
     //Round5();
     //Round6();
-    //Round7();
+   // Round7();
     //Round8();
-    //Round9();
+   // Round9();
     //Round10();
-    //BonusRound();
+    BonusRound();
 }
