@@ -82,7 +82,7 @@ void App::HandleChoice(int choice)
 		}
 		manager.ViewActiveTasks();
 		std::cout << "\nEnter the task number to complete: ";
-		int taskNumber = GetValidatedInputInRange(1, manager.GetActiveTaskCount());
+		taskNumber = GetValidatedInputInRange(1, manager.GetActiveTaskCount());
 		manager.CompleteTask(taskNumber - 1);
 
 		break;
