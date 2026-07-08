@@ -4,7 +4,7 @@ void Case1()
 {
     int health = 100;
 
-    if (health = 0)
+    if (health == 0)
     {
         std::cout << "You have died.\n";
     }
@@ -21,6 +21,7 @@ void Case2()
         if (choice == 1)
         {
             std::cout << "Goodbye!\n";
+            break;
         }
     }
 }
@@ -28,11 +29,12 @@ void Case3()
 {
     std::vector<int> scores = { 10, 20, 30 };
 
-    for (int i = 0; i <= scores.size(); i++)
+    for (int i = 0; i < scores.size(); i++)
     {
         std::cout << scores[i] << "\n";
     }
 }
+
 void Case4()
 {
     int gold;
@@ -57,13 +59,14 @@ void Case6()
     while (health < 100)
     {
         std::cout << "Healing...\n";
+        heath+=50;
     }
 }
 void Case7()
 {
     int dragons = 5;
 
-    dragons -= 10;
+    dragons += 10;
 
     std::cout << dragons;
 }
@@ -82,7 +85,9 @@ void Case9()
     Potion* potion = new Potion();
 
     potion->drink();
+    delete potion;
 }
+
 void Case10()
 {
     int choice;
@@ -91,6 +96,7 @@ void Case10()
 
     std::cout << "You chose: " << choice;
 }
+
 int main()
 {
     Case1();
