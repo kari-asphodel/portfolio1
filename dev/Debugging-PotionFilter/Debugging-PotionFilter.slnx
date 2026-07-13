@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Debugging-PotionFilter/Debugging-PotionFilter.vcxproj" />
+  <Project Path="Debugging-PotionFilter/Debugging-PotionFilter.vcxproj" Id="d7a41a9c-0a23-48b7-a4bc-01115572b2d6" />
 </Solution>
