@@ -20,6 +20,6 @@ int main()
     std::cin >> choice;
 
     std::cout << "You selected: " << snacks[choice] << "\n";
-
+    std::cin.get();
     return 0;
 }

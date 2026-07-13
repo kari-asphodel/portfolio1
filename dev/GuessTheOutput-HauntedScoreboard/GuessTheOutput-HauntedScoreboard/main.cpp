@@ -47,6 +47,6 @@ int main()
         std::cout << players[i].GetName() << ": "
             << players[i].GetScore() << "\n";
     }
-
+    std::cin.get();
     return 0;
 }

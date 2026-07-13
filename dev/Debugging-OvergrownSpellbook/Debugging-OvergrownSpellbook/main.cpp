@@ -1,5 +1,10 @@
 #include <iostream>
-
+void CastSpell(std::string spellName,std::string effect, int damage)
+{
+    std::cout << "You cast " << spellName << ".\n";
+    std::cout << effect << "\n";
+    std::cout << "The enemy takes " << damage << " damage.\n";
+}
 int main()
 {
     int spellChoice;
@@ -13,26 +18,25 @@ int main()
 
     if (spellChoice == 1)
     {
-        std::cout << "You cast Fire.\n";
-        std::cout << "The room gets warmer.\n";
-        std::cout << "The enemy takes 10 damage.\n";
+        CastSpell("Fire", "The room gets warmer.", 10);
+        std::cin.get();
+
     }
     else if (spellChoice == 2)
     {
-        std::cout << "You cast Ice.\n";
-        std::cout << "The room gets colder.\n";
-        std::cout << "The enemy takes 8 damage.\n";
+        CastSpell("Ice", "The room gets colder.", 8);
+        std::cin.get();
+
     }
     else if (spellChoice == 3)
     {
-        std::cout << "You cast Shadow.\n";
-        std::cout << "The lights flicker.\n";
-        std::cout << "The enemy takes 12 damage.\n";
+        CastSpell("Shadow", "The lights flicker.", 12);
+        std::cin.get();
     }
     else
     {
         std::cout << "Invalid spell.\n";
+        std::cin.get();
     }
-
-    return 0;
+    std::cin.get();
 }

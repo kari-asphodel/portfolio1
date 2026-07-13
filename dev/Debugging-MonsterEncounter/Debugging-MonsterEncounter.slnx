@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Debugging-MonsterEncounter/Debugging-MonsterEncounter.vcxproj" />
+  <Project Path="Debugging-MonsterEncounter/Debugging-MonsterEncounter.vcxproj" Id="b8d698aa-3694-4f51-a92d-7b6bbfd9191b" />
 </Solution>

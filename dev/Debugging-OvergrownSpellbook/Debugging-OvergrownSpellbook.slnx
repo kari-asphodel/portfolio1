@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Debugging-OvergrownSpellbook/Debugging-OvergrownSpellbook.vcxproj" />
+  <Project Path="Debugging-OvergrownSpellbook/Debugging-OvergrownSpellbook.vcxproj" Id="9fba2826-a8a6-459b-a150-88e9e1eba1a4" />
 </Solution>

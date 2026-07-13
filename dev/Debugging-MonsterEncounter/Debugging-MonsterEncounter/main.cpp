@@ -10,7 +10,7 @@ int main()
         std::cout << "Monster health: " << monsterHealth << "\n";
         std::cout << "You attack the monster!\n";
 
-        monsterHealth + attackDamage;
+        monsterHealth -= attackDamage;
     }
 
     std::cout << "The monster has been defeated!\n";
