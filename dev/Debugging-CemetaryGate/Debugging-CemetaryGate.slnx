@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Debugging-CemetaryGate/Debugging-CemetaryGate.vcxproj" Id="9982c6b6-7ba1-4f1a-a4cd-3428e45da8e3" />
+</Solution>

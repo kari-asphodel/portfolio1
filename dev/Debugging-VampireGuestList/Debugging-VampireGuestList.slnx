@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Debugging-VampireGuestList/Debugging-VampireGuestList.vcxproj" Id="ea58f208-0026-4261-a09e-abd449f14ed9" />
+</Solution>

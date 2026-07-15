@@ -1,38 +1,50 @@
 #include "TaskManager.h"
 #include <iostream>
+#include <algorithm>
 
-void TaskManager::AddTask(std::string title)
+
+void TaskManager::AddTask(std::string title, std::string priority, std::string category)
 {
-	activeTasks.push_back(Task(title));
+	activeTasks.push_back(Task(title, priority, category));
 	std::cout << "\nTask added to the crypt.\n";
 }
-
-void TaskManager::ViewActiveTasks() const
+void TaskManager::DisplayTaskList(const std::vector<Task>& taskList, std::string heading) const
 {
-	std::cout << "\n==== ACTIVE TASKS ====\n";
-	if (activeTasks.empty())
+	std::cout << "\n==== "<< heading << "====\n";
+	if (taskList.empty())
 	{
-		std::cout << "No active tasks. The crypt is quiet...suspiciously quiet.\n";
+		std::cout << "No tasks found. The crypt is quiet...suspiciously quiet.\n";
 		return;
 	}
-	for (int i = 0; i < activeTasks.size(); i++)
+	for (int i = 0; i < taskList.size(); i++)
 	{
-		std::cout << i + 1 << ". " << activeTasks[i].GetTitle() << "\n";
+		std::cout << i + 1 << ". "
+			<< taskList[i].GetTitle()
+			<< " | Priority: " << taskList[i].GetPriority()
+			<< " | Category: " << taskList[i].GetCategory()
+			<< "\n";
 	}
+}
+void TaskManager::ViewActiveTasks() const
+{
+	DisplayTaskList(activeTasks, "ACTIVE TASKS");
 }
 
 void TaskManager::ViewCompletedTasks() const
 {
-	std::cout << "\n==== COMPLETED TASKS ====\n";
-	if (completedTasks.empty())
+	DisplayTaskList(completedTasks, "COMPLETED TASKS");
+}
+void TaskManager::ViewTasksByPriorty(std::string priority) const
+{
+	std::vector<Task> filteredTasks;
+	for (int i = 0; i < activeTasks.size(); i++)
 	{
-		std::cout << "No completed tasks yet. The ghosts remain employed.\n";
-		return;
+		if (activeTasks[i].GetPriority() == priority)
+		{
+			filteredTasks.push_back(activeTasks[i]);
+		}
 	}
-	for (int i = 0; i < completedTasks.size(); i++)
-	{
-		std::cout << i + 1 << ". " << completedTasks[i].GetTitle() << "\n";
-	}
+	DisplayTaskList(filteredTasks, priority + " PRIORITY TASKS");
 }
 
 void TaskManager::CompleteTask(int index)
@@ -48,6 +60,15 @@ void TaskManager::CompleteTask(int index)
 	{
 		std::cout << "\nInvalid task number. That task does not exist in this realm.\n";
 	}
+}
+
+void TaskManager::SortActiveTasksByPriority()
+{
+	std::sort(activeTasks.begin(), activeTasks.end(), [](const Task& first, const Task& second)
+		{
+			return first.GetPriorityScore() > second.GetPriorityScore();
+		});
+	std::cout << "\nActive Tasks sorted by priority. The loudest demons rise first.\n";
 }
 
 void TaskManager::DisplaySummary()const
