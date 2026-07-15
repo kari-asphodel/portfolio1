@@ -1,5 +1,7 @@
 #include "TaskManager.h"
 #include <iostream>
+#include <algorithm>
+
 
 void TaskManager::AddTask(std::string title, std::string priority, std::string category)
 {
@@ -16,7 +18,11 @@ void TaskManager::DisplayTaskList(const std::vector<Task>& taskList, std::string
 	}
 	for (int i = 0; i < taskList.size(); i++)
 	{
-		std::cout << i + 1 << ". " << taskList[i].GetTitle() << "\n";
+		std::cout << i + 1 << ". "
+			<< taskList[i].GetTitle()
+			<< " | Priority: " << taskList[i].GetPriority()
+			<< " | Category: " << taskList[i].GetCategory()
+			<< "\n";
 	}
 }
 void TaskManager::ViewActiveTasks() const
@@ -38,7 +44,7 @@ void TaskManager::ViewTasksByPriorty(std::string priority) const
 			filteredTasks.push_back(activeTasks[i]);
 		}
 	}
-	DisplayTaskList(filteredTasks, priority + " PRIORITY TASKS")
+	DisplayTaskList(filteredTasks, priority + " PRIORITY TASKS");
 }
 
 void TaskManager::CompleteTask(int index)

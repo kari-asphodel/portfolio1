@@ -46,7 +46,6 @@ int Task::GetPriorityScore() const
     }
     else
     {
-        std::cout << "I don't have that priority.\n";
         return 0;
     }
     return 0;
