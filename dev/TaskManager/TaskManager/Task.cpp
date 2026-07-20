@@ -6,7 +6,7 @@ Task::Task()
     category = "General";
     completed = false;
 }
-Task::Task(std::string taskTitle, std::string taskPriority, std::string taskCategory, bool isCompletd)
+Task::Task(std::string taskTitle, std::string taskPriority, std::string taskCategory, bool isCompleted)
 {
     title = taskTitle;
     priority = taskPriority;
