@@ -9,7 +9,8 @@ private:
 	bool completed = false;
 
 public:
-	Task(std::string taskTitle, std::string taskPriority, std::string taskCategory);
+	Task();
+	Task(std::string taskTitle, std::string taskPriority, std::string taskCategory, bool isCompleted = false);
 
 	std::string GetTitle()const;
 	std::string GetPriority()const;
@@ -19,5 +20,7 @@ public:
 	int GetPriorityScore() const;
 
 	void CompleteTask();
+
+	std::string ToTextLine() const;
 };
 
