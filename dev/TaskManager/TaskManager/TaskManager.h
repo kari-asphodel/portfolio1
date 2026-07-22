@@ -10,7 +10,7 @@ private:
 
 	void DisplayTaskList(const std::vector<Task>& taskList, std::string heading) const;
 
-	void WriteStringBinary(std::ofstream& file, const std::string text) const;
+	void WriteStringBinary(std::ofstream& file, const std::string& text) const;
 	std::string ReadStringBinary(std::ifstream& file) const;
 public:
 	void AddTask(std::string title, std::string priority, std::string category);

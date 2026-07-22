@@ -90,21 +90,26 @@ int TaskManager::GetActiveTaskCount() const
 void TaskManager::SaveToTextFile(std::string fileName) const
 {
 	std::ofstream file(fileName);
+
 	if (!file.is_open())
 	{
 		std::cout << "\nUnable to open text file for saving.\n";
 		return;
 	}
+
 	for (int i = 0; i < activeTasks.size(); i++)
 	{
 		file << activeTasks[i].ToTextLine() << "\n";
 	}
+
 	for (int i = 0; i < completedTasks.size(); i++)
 	{
 		file << completedTasks[i].ToTextLine() << "\n";
 	}
+
 	file.close();
-	std::cout << "\nTasks saved to the text file successfully.\n";
+
+	std::cout << "\nTasks saved to text file successfully.\n";
 }
 
 void TaskManager::LoadFromTextFile(std::string fileName)
@@ -158,7 +163,7 @@ void TaskManager::WriteStringBinary(std::ofstream& file, const std::string& text
 	file.write(text.c_str(), length);
 }
 
-void TaskManager::ReadStringBinary(std::ifstream& file) const
+std::string TaskManager::ReadStringBinary(std::ifstream& file) const
 {
 	int length = 0;
 
@@ -181,7 +186,7 @@ void TaskManager::SaveToBinaryFile(std::string fileName) const
 	int activeCount = static_cast<int>(activeTasks.size());
 	int completedCount = static_cast<int>(completedTasks.size());
 
-	file.write(reinterpret_cast<char*>(&activeCount), sizeof(activecount));
+	file.write(reinterpret_cast<char*>(&activeCount), sizeof(activeCount));
 	for (int i = 0; i < activeTasks.size(); i++)
 	{
 		WriteStringBinary(file, activeTasks[i].GetTitle());
@@ -197,7 +202,7 @@ void TaskManager::SaveToBinaryFile(std::string fileName) const
 		WriteStringBinary(file, completedTasks[i].GetCategory());
 	}
 	file.close();
-	std::cout < "\nTasks saved to the binary file successfully.\n";
+	std::cout << "\nTasks saved to the binary file successfully.\n";
 }
 
 void TaskManager::LoadFromBinaryFile(std::string fileName)
