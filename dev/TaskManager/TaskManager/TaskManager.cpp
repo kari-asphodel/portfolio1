@@ -241,3 +241,12 @@ void TaskManager::LoadFromBinaryFile(std::string fileName)
 	file.close();
 	std::cout << "\nTasks loaded from binary file successfully.\n";
 }
+
+//
+//The save / load feature allows the program to store task data outside the running application so users can restore their tasks later.
+//
+//It is structured inside the TaskManager class because TaskManager owns the active and completed task vectors.
+//
+//The text version writes task data using a delimiter, while the binary version writes raw data using counts and string lengths.
+//
+//We designed it this way to keep file handling separate from the menu system and to demonstrate two common ways programs store data.
