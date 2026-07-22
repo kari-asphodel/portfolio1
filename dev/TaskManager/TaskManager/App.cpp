@@ -10,12 +10,12 @@ App::App()
 void App::Run()
 {
 	std::cout << "Welcome to the Crypt Keeper Productivity Program.\n";
-	std::cout << "Today, we expand the crypt without collapsing it.\n";
+	std::cout << "Final week: stabilize the crypt and preserve the records.\n";
 	while (isRunning)
 	{
 		DisplayMenu();
 
-		int choice = GetValidatedInputInRange(1, 8);
+		int choice = GetValidatedInputInRange(1, 12);
 
 		HandleChoice(choice);
 	}
@@ -32,8 +32,12 @@ void App::DisplayMenu() const
 	std::cout << "5. View Progress Summary\n";
 	std::cout << "6. Sort Active Tasks by Priority\n";
 	std::cout << "7. Filter Active Tasks by Priority\n";
-	std::cout << "8. Quit\n";
-	std::cout << "Choose an option between 1 and 8: ";
+	std::cout << "8. Save Tasks to Text File\n";
+	std::cout << "9. Load Tasks from Text File\n";
+	std::cout << "10. Save Tasks to Binary File\n";
+	std::cout << "11. Load Tasks from Binary File\n";
+	std::cout << "12. Quit\n";
+	std::cout << "Choose an option between 1 and 12: ";
 }
 int App::GetValidatedInputInRange(int min, int max)
 {
@@ -129,6 +133,18 @@ void App::HandleChoice(int choice)
 		}
 		break;
 	case 8:
+		manager.SaveToTextFile("tasks.txt");
+		break;
+	case 9:
+		manager.LoadFromTextFile("tasks.txt");
+		break;
+	case 10:
+		manager.SaveToBinaryFile("tasks.dat");
+		break;
+	case 11:
+		manager.LoadFromBinaryFile("tasks.dat");
+		break;
+	case 12:
 		isRunning = false;
 		break;
 	default:
